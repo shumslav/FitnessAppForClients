@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#efe6c4">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".ui.meals.MealsFragment">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_horizontal"
+                    android:text="День недели"
+                    android:textColor="@color/black"
+                    android:textSize="35dp" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="30dp"
+                    android:background="@color/white">
+
+                    <Spinner
+                        android:id="@+id/day_of_week"
+                        android:layout_width="300dp"
+                        android:layout_height="60dp"
+                        android:backgroundTint="@color/black" />
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Белки г."
+                        android:textSize="30sp"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/protein"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textSize="30sp"
+                        android:textColor="@color/black"
+                        android:background="@color/white"
+                        android:layout_marginEnd="20dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Жиры г."
+                        android:textSize="30sp"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/fats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textSize="30sp"
+                        android:textColor="@color/black"
+                        android:background="@color/white"
+                        android:layout_marginEnd="20dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Углеводы г."
+                        android:textSize="30sp"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/carbohydrates"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textSize="30sp"
+                        android:textColor="@color/black"
+                        android:background="@color/white"
+                        android:layout_marginEnd="20dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Калории ккал."
+                        android:textSize="30sp"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/calories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textSize="30sp"
+                        android:textColor="@color/black"
+                        android:background="@color/white"
+                        android:layout_marginEnd="20dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notes_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Заметки"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="35sp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="10dp"
+                    android:textSize="17sp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="15dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profileFragment"
+        android:title="Профиль"
+        android:icon="@drawable/ic_profile" />
+
+    <item
+        android:id="@+id/scheduleFragment"
+        android:title="Календарь"
+        android:icon="@drawable/ic_schedule" />
+
+    <item
+        android:id="@+id/mealsFragment"
+        android:title="Питание"
+        android:icon="@drawable/ic_meal"/>
+
+    <item
+        android:id="@+id/chatFragment"
+        android:title="Чат с тренером"
+        android:icon="@drawable/ic_message"/>
+</menu>

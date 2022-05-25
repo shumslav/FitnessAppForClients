@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="exercise"
+            type="com.example.fitnessappuser.models.Exercise" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="78dp"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/_card"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="35sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/_card"
+            android:layout_width="317dp"
+            android:layout_height="78dp"
+            app:cardCornerRadius="5dp"
+            android:backgroundTint="#a89479"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="13dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="2dp"
+                    android:textSize="24sp"/>
+                <TextView
+                    android:id="@+id/data"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="24sp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>
