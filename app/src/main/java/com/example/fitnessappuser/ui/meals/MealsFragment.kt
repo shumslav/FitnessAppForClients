@@ -11,7 +11,9 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnessappuser.R
+import com.example.fitnessappuser.adapters.MealsAdapter
 import com.example.fitnessappuser.databinding.FragmentMealsBinding
 import com.example.fitnessappuser.models.Meal
 import com.example.fitnessappuser.viewModels.ExercisesViewModel
@@ -38,6 +40,9 @@ class MealsFragment : Fragment() {
             viewModel.daysOfWeek
         )
 
+        binding.meals.adapter = MealsAdapter(viewModel, viewLifecycleOwner)
+        binding.meals.layoutManager = LinearLayoutManager(requireContext())
+
         viewModel.meals.observe(viewLifecycleOwner) {
             setMeal(viewModel.meals.value!![binding.dayOfWeek.selectedItem as String]!!)
         }
@@ -60,6 +65,7 @@ class MealsFragment : Fragment() {
         binding.protein.text = meal.protein
         binding.fats.text = meal.fats
         binding.carbohydrates.text = meal.carbohydrates
+        viewModel.selectedMeals.value = meal.meals
         if (meal.notes == ""){
             binding.notesForm.visibility = View.GONE
         }

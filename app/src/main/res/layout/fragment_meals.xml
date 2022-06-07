@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:background="#efe6c4">
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -155,7 +155,15 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginTop="15dp" />
                 </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/meals"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginTop="20dp"
+                    tools:listitem="@layout/meal_card" />
             </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
     </FrameLayout>
 </layout>

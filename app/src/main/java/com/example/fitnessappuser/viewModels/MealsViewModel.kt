@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.fitnessappuser.models.CurrentUser
 import com.example.fitnessappuser.models.Meal
+import com.example.fitnessappuser.models.SomeMeal
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -17,6 +18,7 @@ class MealsViewModel(private val myApplication: Application) : AndroidViewModel(
 
     val meals: MutableLiveData<MutableMap<String,Meal>> = MutableLiveData()
     val user = CurrentUser(myApplication)
+    var selectedMeals: MutableLiveData<MutableList<SomeMeal>> = MutableLiveData()
 
     val daysOfWeek =
         listOf("Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье")
@@ -47,5 +49,53 @@ class MealsViewModel(private val myApplication: Application) : AndroidViewModel(
                     }
                 }
             )
+    }
+
+    fun sortMeals(meals: MutableList<SomeMeal>): MutableList<SomeMeal> {
+        val sortedMeals = mutableListOf<SomeMeal>()
+        val copyMeals = mutableListOf<SomeMeal>()
+        if (meals.isEmpty())
+            return sortedMeals
+        copyMeals.addAll(meals)
+        while (copyMeals.isNotEmpty()) {
+            var minMeal: SomeMeal? = null
+            copyMeals.forEach {
+                if (minMeal == null)
+                    minMeal = it
+                else
+                    minMeal = checkMeals(it,minMeal!!)
+            }
+            sortedMeals.add(minMeal!!)
+            copyMeals.remove(minMeal)
+        }
+        return sortedMeals
+    }
+
+    private fun checkMeals(firstMeal: SomeMeal, secondMeal: SomeMeal): SomeMeal {
+        val firstTime = firstMeal.time.split(":")
+        val secondTime = secondMeal.time.split(":")
+        if (firstTime[0][0]=='0')
+            firstTime[0].removeRange(0,0)
+        if (secondTime[0][0]=='0')
+            secondTime[0].removeRange(0,0)
+
+        if (firstTime[1][0]=='0')
+            firstTime[1].removeRange(0,0)
+        if (secondTime[1][0]=='0')
+            secondTime[1].removeRange(0,0)
+        val hourFirst = firstTime[0].toInt()
+        val minutesFirst = firstTime[1].toInt()
+        val hourSecond = secondTime[0].toInt()
+        val minutesSecond = secondTime[1].toInt()
+        return if (hourFirst >= hourSecond)
+            if (hourFirst == hourSecond)
+                if (minutesFirst >= minutesSecond)
+                    secondMeal
+                else
+                    firstMeal
+            else
+                secondMeal
+        else
+            firstMeal
     }
 }

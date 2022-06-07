@@ -6,5 +6,6 @@ data class Meal(
     var fats:String = "",
     var carbohydrates:String = "",
     var calories:String = "",
-    var notes:String = ""
+    var notes:String = "",
+    var meals:MutableList<SomeMeal> = mutableListOf()
 )
