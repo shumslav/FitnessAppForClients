@@ -34,6 +34,7 @@ import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import makeToast
 import java.lang.Exception
 
 
@@ -90,10 +91,14 @@ class TrainNoteFragment : Fragment() {
                 } else {
                     binding.notesForm.visibility = View.GONE
                 }
-                if (it.isCompleted)
+                if (it.isCompleted) {
                     binding.acceptForm.visibility = View.GONE
-                else
+                    binding.reviewForm.visibility = View.VISIBLE
+                }
+                else {
+                    binding.review.setText(it.review)
                     binding.acceptForm.visibility = View.VISIBLE
+                }
                 binding.exercisesRecycler.adapter?.notifyDataSetChanged()
             }
             binding.accept.setOnClickListener {
@@ -120,8 +125,22 @@ class TrainNoteFragment : Fragment() {
                             )
                         }
                     viewModel.getTrainNotes()
-                    requireActivity().onBackPressed()
                 }
+            }
+
+            binding.acceptReview.setOnClickListener {
+                if (binding.review.text.toString() != ""){
+                    val currentTrainNote = trainNote.value!!
+                    currentTrainNote.review = binding.review.text.toString()
+                    Firebase.database.reference.child(NODE_USERS).child(user.login)
+                        .child(NODE_TRAIN_NOTES)
+                        .child(date!!)
+                        .child(id!!).setValue(currentTrainNote).addOnCompleteListener {
+                            makeToast(requireContext(),"Отзыв о тренировке сохранен")
+                        }
+                }
+                else
+                    makeToast(requireContext(),"Отзыв пустой")
             }
         }
         return binding.root

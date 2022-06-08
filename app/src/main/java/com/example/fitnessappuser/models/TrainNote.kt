@@ -13,7 +13,8 @@ data class TrainNote(
     var bodyPart:String = "",
     var exercises:MutableList<AddedExercise> = mutableListOf(),
     var notes:String = "",
-    var isCompleted:Boolean = false
+    var isCompleted:Boolean = false,
+    var review:String = ""
 ){
     val duration:String
         get() {
