@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:clickable="true"
         android:focusable="true"
-        android:background="#efe6c4">
+        android:background="@drawable/background">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -30,158 +30,203 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:background="#547a72"
+                    android:background="#1E0297"
                     android:gravity="center"
                     android:text="Тренировка"
                     android:textColor="@color/white"
                     android:textSize="35sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp"
-                    android:text="@{trainNote.bodyPart}"
-                    android:textColor="@color/black"
-                    android:textSize="50sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{trainNote.dateWithDot}"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:textSize="25sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{trainNote.allTime}"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:textSize="25sp"/>
-
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="21dp"
-                    android:layout_marginStart="9dp"
-                    android:layout_marginEnd="9dp"
-                    android:backgroundTint="#d4c7a8"
-                    app:cardCornerRadius="8dp">
+                    android:layout_marginTop="30dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="16dp"
+                            android:text="@{trainNote.bodyPart}"
+                            android:textColor="#1E0297"
+                            android:textSize="50sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Упражнения"
+                            android:text="@{trainNote.dateWithDot}"
                             android:layout_gravity="center_horizontal"
-                            android:textSize="27sp"
-                            android:textColor="@color/black"/>
+                            android:layout_marginTop="10dp"
+                            android:textColor="#1E0297"
+                            android:textSize="25sp"/>
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/exercises_recycler"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{trainNote.allTime}"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#1E0297"
+                            android:textSize="25sp"/>
+
+                        <com.google.android.material.card.MaterialCardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginBottom="15dp"/>
+                            android:layout_marginTop="21dp"
+                            android:layout_marginStart="9dp"
+                            android:layout_marginEnd="9dp"
+                            android:backgroundTint="#FABE85"
+                            app:cardElevation="10dp"
+                            app:cardCornerRadius="8dp"
+                            android:layout_marginBottom="15dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Упражнения"
+                                    android:layout_gravity="center_horizontal"
+                                    android:textSize="27sp"
+                                    android:textColor="@color/black"/>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/exercises_recycler"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginBottom="15dp"/>
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:id="@+id/notes_form"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="15dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Заметки"
+                                android:textSize="30sp"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center_horizontal"/>
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardCornerRadius="35dp"
+                                app:strokeColor="#5267D1"
+                                app:strokeWidth="2dp"
+                                app:cardElevation="5dp">
+                                <TextView
+                                    android:id="@+id/notes"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="17sp"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/black"
+                                    android:layout_marginBottom="8dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/accept_form"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Отметить как пройденную"
+                                android:textSize="30sp"
+                                android:textColor="@color/black" />
+
+                            <ImageView
+                                android:id="@+id/accept"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/ic_accept"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/review_form"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Отзыв о тренировке"
+                                android:textSize="30sp"
+                                android:textColor="@color/black" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                app:cardCornerRadius="35dp"
+                                app:strokeColor="#5267D1"
+                                app:strokeWidth="2dp"
+                                app:cardElevation="5dp">
+                                <EditText
+                                    android:id="@+id/review"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="17sp"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginEnd="15dp"
+                                    android:layout_marginTop="5dp"
+                                    android:text="@{trainNote.review}"
+                                    android:backgroundTint="@color/white"
+                                    android:textColor="@color/black"
+                                    android:layout_marginBottom="8dp"/>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/accept_review"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/ic_accept"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"/>
+                        </LinearLayout>
+
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:id="@+id/notes_form"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    android:layout_marginTop="30dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Заметки"
-                        android:textSize="25sp"
-                        android:textColor="@color/black"
-                        android:layout_gravity="center_horizontal"/>
-                    <TextView
-                        android:id="@+id/notes"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:text=""
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:background="@color/white"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/accept_form"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Отметить как пройденную"
-                    android:textSize="30sp"
-                    android:textColor="@color/black" />
-
-                <ImageView
-                    android:id="@+id/accept"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/ic_accept"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/review_form"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Отзыв о тренировке"
-                        android:textSize="30sp"
-                        android:textColor="@color/black" />
-
-                    <EditText
-                        android:id="@+id/review"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="17sp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/white"/>
-
-                    <ImageView
-                        android:id="@+id/accept_review"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:src="@drawable/ic_accept"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"/>
-                </LinearLayout>
-
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
         </ScrollView>
     </FrameLayout>

@@ -32,21 +32,21 @@ class ProfileFragment : Fragment() {
     }
 
     fun logout() {
-        FirebaseMessaging.getInstance().unsubscribeFromTopic(user.login)
         user.logout()
+        FirebaseMessaging.getInstance().unsubscribeFromTopic(user.login)
         requireActivity().startActivity(Intent(requireContext(), EnterActivity::class.java))
         requireActivity().finish()
     }
 
     fun groupMuscles() {
-        requireActivity().supportFragmentManager.beginTransaction()
+        childFragmentManager.beginTransaction()
             .add(R.id.container_fragment_profile, GroupMusclesFragment())
             .addToBackStack("group_muscles")
             .commit()
     }
 
     fun exercises() {
-        requireActivity().supportFragmentManager.beginTransaction()
+        childFragmentManager.beginTransaction()
             .add(R.id.container_fragment_profile, ExercisesFragment())
             .addToBackStack("exercises")
             .commit()

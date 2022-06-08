@@ -1,6 +1,7 @@
 package com.example.fitnessappuser.adapters
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -50,10 +51,14 @@ class TrainNotesAdapter(
                 if (viewmodel.trainNotes.value!!.containsKey(pickedDate)) {
                     val trainNote = viewmodel.trainNotes.value!![pickedDate]!![position]
                     holder.binding.trainNote = trainNote
-                    if (trainNote.isCompleted)
-                        holder.binding.status.text = "Выполнена"
-                    else
-                        holder.binding.status.text = "Не выполнена"
+                    if (trainNote.isCompleted) {
+                        holder.binding.status.setTextColor(Color.rgb(75,221,0))
+                        holder.binding.status.text = "Выполнено"
+                    }
+                    else {
+                        holder.binding.status.text = "Не выполнено"
+                        holder.binding.status.setTextColor(Color.rgb(214,42,12))
+                    }
                     holder.binding.trainNoteCard.setOnClickListener {
                         fragment.childFragmentManager.beginTransaction()
                             .add(

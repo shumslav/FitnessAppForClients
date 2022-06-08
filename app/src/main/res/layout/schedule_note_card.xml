@@ -12,7 +12,6 @@
         android:id="@+id/train_note_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#efe6c4"
         app:cardCornerRadius="5dp"
         android:layout_marginBottom="10dp">
 
@@ -27,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:text="@{trainNote.startTime}"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <TextView
@@ -34,6 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
+                android:textColor="@color/black"
                 android:layout_toEndOf="@id/start_time"
                 android:text="-"/>
 
@@ -43,13 +44,14 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:layout_toEndOf="@id/_tire"
+                android:textColor="@color/black"
                 android:text="@{trainNote.finishTime}" />
 
             <TextView
                 android:id="@+id/status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="5dp"/>
 
@@ -60,13 +62,15 @@
                 android:layout_below="@id/start_time"
                 android:maxLines="1"
                 android:text="@{trainNote.bodyPart}"
+                android:textColor="@color/black"
                 android:textSize="40sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{trainNote.duration}"
                 android:layout_below="@id/name"
+                android:text="@{trainNote.duration}"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
         </RelativeLayout>
 

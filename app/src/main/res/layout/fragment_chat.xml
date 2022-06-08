@@ -12,10 +12,11 @@
         android:layout_height="match_parent"
         tools:context=".ui.chat.ChatFragment">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/up_form"
             android:layout_width="match_parent"
-            android:layout_height="70dp">
+            android:layout_height="70dp"
+            app:cardElevation="3dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,22 +37,23 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="15dp"
                     android:text=""
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@id/nav_menu"
-            android:layout_below="@id/up_form">
+            android:layout_below="@id/up_form"
+            android:background="@drawable/background">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_messages"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/message_card"
                 android:layout_alignParentBottom="true" />
 
         </RelativeLayout>
@@ -64,38 +66,47 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:background="#F3F2F2"
+            android:background="@color/white"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/message"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginVertical="15dp"
-                android:background="#F3F2F2"
-                android:hint="Сообщение"
-                android:inputType="textNoSuggestions"
-                android:textSize="18sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <androidx.cardview.widget.CardView
+                <EditText
+                    android:id="@+id/message"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:textSize="17sp"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/black"
+                    android:hint="Сообщение" />
 
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                app:cardCornerRadius="360dp">
 
-                <ImageButton
-                    android:id="@+id/send"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:layout_gravity="center"
-                    android:background="@color/white"
-                    android:src="@drawable/ic_arrow" />
-            </androidx.cardview.widget.CardView>
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="360dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:strokeColor="#1E0297"
+                    app:strokeWidth="1dp">
+
+                    <ImageButton
+                        android:id="@+id/send"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_arrow" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
     </RelativeLayout>

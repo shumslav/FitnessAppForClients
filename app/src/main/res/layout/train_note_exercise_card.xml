@@ -24,15 +24,17 @@
             android:textColor="@color/black"
             android:textSize="35sp" />
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/_card"
             android:layout_width="317dp"
             android:layout_height="78dp"
-            app:cardCornerRadius="5dp"
-            android:backgroundTint="#a89479"
+            app:cardCornerRadius="15dp"
+            android:backgroundTint="@color/white"
+            app:strokeWidth="3dp"
+            app:strokeColor="#D66900"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="13dp"
-            >
+            app:cardElevation="3dp"
+            android:layout_marginEnd="13dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -46,19 +48,21 @@
                     android:layout_height="wrap_content"
                     android:maxLines="1"
                     android:gravity="center"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:layout_marginBottom="2dp"
                     android:textSize="24sp"/>
                 <TextView
                     android:id="@+id/data"
                     android:layout_width="match_parent"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:gravity="center"
                     android:textSize="24sp"
                     android:layout_height="wrap_content"/>
+
+
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </RelativeLayout>
 </layout>

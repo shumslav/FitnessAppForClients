@@ -17,7 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#efe6c4"
+            android:background="@drawable/background_enter"
             android:orientation="vertical"
             tools:context=".ui.login.EnterActivity">
 
@@ -39,14 +39,29 @@
                 android:textColor="@color/black"
                 android:textSize="30sp" />
 
-            <EditText
-                android:id="@+id/login"
-                android:layout_width="284dp"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
-                android:background="@color/white"
-                android:gravity="center" />
+                android:minWidth="284dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="35dp">
+
+                <EditText
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/white"
+                    android:text=""
+                    android:maxLines="1"
+                    android:minWidth="284dp"
+                    android:textSize="20sp"
+                    android:layout_marginHorizontal="12dp"
+                    android:gravity="center" />
+
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -57,27 +72,49 @@
                 android:textColor="@color/black"
                 android:textSize="30dp" />
 
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="284dp"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
-                android:inputType="textPassword"
-                android:background="@color/white"
-                android:gravity="center" />
+                android:minWidth="284dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="35dp">
 
-            <TextView
-                android:id="@+id/enter"
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:textSize="20sp"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:minWidth="284dp"
+                    android:text=""
+                    android:background="@color/white"
+                    android:gravity="center" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="203dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="35dp"
-                android:background="#64594c"
-                android:gravity="center"
-                android:text="Войти"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
+                app:cardElevation="3dp"
+                android:backgroundTint="#DA5F01"
+                app:cardCornerRadius="35dp">
+
+                <TextView
+                    android:id="@+id/enter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Войти"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:id="@+id/registration"
@@ -87,7 +124,7 @@
                 android:layout_marginTop="70dp"
                 android:gravity="center"
                 android:text="Зарегистрироваться"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="25sp" />
         </LinearLayout>
 

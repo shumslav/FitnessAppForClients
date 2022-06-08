@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
@@ -11,7 +12,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#efe6c4"
+        android:background="@drawable/background"
         android:clickable="true"
         android:focusable="true">
 
@@ -28,29 +29,31 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:layout_marginBottom="37dp"
-                    android:background="#547a72"
+                    android:layout_marginBottom="32dp"
+                    android:background="#1E0297"
                     android:gravity="center"
                     android:text="Мои группы мышц"
                     android:textColor="@color/white"
                     android:textSize="35sp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="10dp"
-                    tools:listitem="@layout/group_muscles_card" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginHorizontal="5dp"
+                    app:cardElevation="5dp"
+                    android:layout_marginBottom="15dp">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="10dp"
+                            tools:listitem="@layout/group_muscles_card" />
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
-
-
         </FrameLayout>
     </ScrollView>
 </layout>

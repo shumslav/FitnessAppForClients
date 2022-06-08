@@ -3,19 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/drawable-v24/background.xml" value="0.1405" />
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/drawable/background.xml" value="0.1405" />
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/drawable/background_enter.xml" value="0.1405" />
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/drawable/background_profile.xml" value="0.1405" />
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/drawable/background_registration.xml" value="0.1405" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/drawable/ic_arrow.xml" value="0.1775" />
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/drawable/ic_meal.xml" value="0.1405" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/activity_enter.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/activity_main.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_add_new_exercise.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_add_new_note.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_chat.xml" value="0.22" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_exercises.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_group_muscles.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_meals.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_profile.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_registration.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_group_muscles.xml" value="0.2" />
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_meals.xml" value="0.23757575757575758" />
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_registration.xml" value="0.2" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_schedule.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_train_note.xml" value="0.25" />
+        <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/fragment_train_note.xml" value="0.18" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/group_muscles_card.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/meal_card.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/shums/AndroidStudioProjects/FitnessAppUser/app/src/main/res/layout/message_card.xml" value="0.20416666666666666" />

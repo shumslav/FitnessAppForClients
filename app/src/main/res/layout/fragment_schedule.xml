@@ -17,6 +17,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background"
         tools:context="com.example.fitnessappuser.ui.schedule.ScheduleFragment">
 
         <LinearLayout
@@ -27,7 +28,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#547a72">
+                android:background="#1E0297">
 
                 <TextView
                     android:id="@+id/start_date"
@@ -37,11 +38,19 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@color/white"
                     android:gravity="center"
                     android:onClick="@{() -> fragment.setDateStart()}"
                     android:text="@{viewmodel.startDate}"
+                    android:textColor="@color/white"
                     android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/end_date"
@@ -51,10 +60,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@color/white"
                     android:gravity="center"
                     android:onClick="@{() -> fragment.setDateEnd()}"
                     android:text="@{viewmodel.endDate}"
+                    android:textColor="@color/white"
                     android:textSize="28sp" />
             </RelativeLayout>
 

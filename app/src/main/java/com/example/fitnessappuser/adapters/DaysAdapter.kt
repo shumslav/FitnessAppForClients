@@ -65,11 +65,16 @@ class DaysAdapter(val viewmodel: ScheduleViewModel, lifecycleOwner: LifecycleOwn
 
             }
             if (calendarDay.dateString == viewmodel.lastPickedDay.value?.dateString) {
-                holder.binding.cardDay.setCardBackgroundColor(Color.rgb(100, 89, 76))
+                holder.binding.cardDay.setCardBackgroundColor(Color.rgb(82, 103, 209))
+                holder.binding.month.setTextColor(Color.WHITE)
+                holder.binding.day.setTextColor(Color.WHITE)
                 id = holder.adapterPosition
             }
-            else
-                holder.binding.cardDay.setCardBackgroundColor(Color.rgb(164,143,116))
+            else {
+                holder.binding.cardDay.setCardBackgroundColor(Color.WHITE)
+                holder.binding.month.setTextColor(Color.rgb(82, 103, 209))
+                holder.binding.day.setTextColor(Color.rgb(82, 103, 209))
+            }
             if (!viewmodel.trainNotes.value.isNullOrEmpty()){
                 if (viewmodel.trainNotes.value!!.containsKey(calendarDay.dateString)){
                     val trainNotesInDay = viewmodel.trainNotes.value!![calendarDay.dateString]!!
